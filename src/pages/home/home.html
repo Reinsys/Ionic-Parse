@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Home</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-list>
+        <ion-item-divider>
+            <h2>Add Score</h2>
+        </ion-item-divider>
+        <ion-item-group>
+            <ion-item>
+                <ion-label floating> Name</ion-label>
+                <ion-input type="text" placeholder="" [(ngModel)]="newScore.playerName"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating> Score</ion-label>
+                <ion-input type="text" placeholder="" [(ngModel)]="newScore.score"></ion-input>
+            </ion-item>
+            <ion-item>
+                <button ion-button icon-left color="primary" (click)="postGameScore()"><ion-icon name="checkmark-circle"></ion-icon> Submit</button>
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-divider>
+            <h2>Current Scores</h2>
+        </ion-item-divider>
+        <ion-item *ngFor="let gameScore of gameScores">
+            <h2>{{gameScore.get('playerName')}}</h2>
+            <p>{{gameScore.get('score')}}</p>
+        </ion-item>
+    </ion-list>
+
+    <ion-infinite-scroll (ionInfinite)="$event.waitFor(listScores())">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

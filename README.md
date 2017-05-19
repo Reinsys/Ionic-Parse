@@ -4,6 +4,6 @@ A starter template for using Parse Server backend for Ionic Framework 2+ and Ang
 # Setup
 Clone this repository, rename to your project name and change directory to the project. 
 
-Run npm install to install dependencies.
+Run <code>npm install</code> to install dependencies.
 
 Open ./src/providers/parse/parse.ts and set your parseAppId and parseServerUrl.

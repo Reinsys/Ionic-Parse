@@ -6,4 +6,4 @@ Clone this repository, rename to your project name and change directory to the p
 
 Run npm install to install dependencies.
 
-Open ./src/providers/parse.ts and set your parseAppId and parseServerUrl.
+Open ./src/providers/parse/parse.ts and set your parseAppId and parseServerUrl.
